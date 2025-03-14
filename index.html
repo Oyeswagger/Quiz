@@ -7,9 +7,9 @@
 		<style></style>
 	</head>
 	<body>
-		<input type="text" />
-		<button onclick="">Click me!</button>
-		<div id="show"></div>
+		<input id="input" type="text" placeholder="type something right here" />
+		<button onclick="showTextBelow()">Click me!</button>
+		<div id="output"></div>
 	</body>
 </html>
 <script>
@@ -17,11 +17,18 @@
 		'Love is the best thing in this world. Some found their love and some are still looking for their love';
 	console.log(sentence.indexOf('love'));
 	console.log(sentence.lastIndexOf('love'));
-	let happy = 'love';
-	console.log(happy.length);
+	console.log('love'.length);
 
-	function show() {
-		let pop = document.getElementById('show');
+	let theInput = document.getElementById('input');
+	let div = document.getElementById('output');
+
+	function showTextBelow() {
+		let userValue = theInput.value.toLowerCase();
+		let repeatedText = userValue;
+		repeatedText = userValue.length;
+		console.log(userValue.repeat());
+
+		div.innerText = repeatedText;
 		console.log();
 	}
 </script>
